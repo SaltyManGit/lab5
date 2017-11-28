@@ -18,7 +18,7 @@ public class Car extends GroundTransport implements Cloneable
         if (null == obj) {return false;}
         if (getClass() != obj.getClass()){return false;}
         Car car = (Car)obj;
-        if (name != car.name) {return false;}
+        if (name.equals(car.name)) {return true;}
         return true;
     }
 
@@ -42,11 +42,6 @@ public class Car extends GroundTransport implements Cloneable
 
     @Override
     protected Object clone() throws CloneNotSupportedException {
-        try {
-            return (Car)super.clone();
-        }
-        catch (CloneNotSupportedException ex) {
-            throw  new InternalError();
-        }
+        return super.clone();
     }
 }
